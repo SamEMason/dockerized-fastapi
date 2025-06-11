@@ -2,16 +2,15 @@
 
 build:
 	@echo "🐳 Building Docker image..."
-	@docker build -t api .
+	@docker compose build
 
 run:
 	@echo "🛠 Running API container..."
-	@docker run -d -p 8000:80 --name api api
+	@docker compose up -d
 
 down:
 	@echo "🧹 Stopping and removing container..."
-	@docker stop api
-	@docker rm api
+	@docker composse down
 
 up:
 	@$(MAKE) build
