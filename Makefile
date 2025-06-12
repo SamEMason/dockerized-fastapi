@@ -20,3 +20,9 @@ rebuild:
 	@$(MAKE) down
 	@$(MAKE) build
 	@$(MAKE) run
+
+test:
+	@docker run --rm api pytest tests/
+
+test-local:
+	pytest tests/
