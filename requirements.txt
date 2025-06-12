@@ -2,3 +2,7 @@ fastapi[standard]
 uvicorn[standard]
 python-dotenv
 pydantic
+
+# Testing
+pytest
+httpx
