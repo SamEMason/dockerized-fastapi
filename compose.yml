@@ -11,3 +11,10 @@ services:
       - ENV=dev
     env_file:
       - .env
+
+  test:
+    build: .
+    command: sh -c "PYTHONPATH=/app pytest tests/"
+    volumes:
+      - .:/app
+    working_dir: /app

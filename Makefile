@@ -10,7 +10,7 @@ run:
 
 down:
 	@echo "🧹 Stopping and removing container..."
-	@docker composse down
+	@docker compose down
 
 up:
 	@$(MAKE) build
@@ -22,7 +22,8 @@ rebuild:
 	@$(MAKE) run
 
 test:
-	@docker run --rm api pytest tests/
+	@docker compose run --rm test
+
 
 test-local:
-	pytest tests/
+	PYTHONPATH=./ pytest tests/
